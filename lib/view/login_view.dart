@@ -97,16 +97,24 @@ class _LoginViewState extends State<LoginView> {
                 }else if(_passwordController.text.length<6){
                   Utils.flushBArErrorMessage('Please Enyer 6 digits password', context);
                 }else{
+                  // Map data ={
+                  //   'email': _emailContoller.text.toString(),
+                  //   'password':_passwordController.text.toString()
+                  // };
                   Map data ={
-                    'email': _emailContoller.text.toString(),
-                    'password':_passwordController.text.toString()
+                    'email': "eve.holt@reqres.in",
+                    'password':"cityslicka",
                   };
-                  print(data.toString());
                   authViewModel.loginApi(data, context);
                   print('Api Hit');
                 }
             }),
-
+            SizedBox(height: height * .02,),
+            InkWell(
+              onTap: (){
+                Navigator.pushNamed(context, RoutesName.signUp);
+              },
+                child: Text("Don't have an accont ? Sign Up "))
           ],
 
 
