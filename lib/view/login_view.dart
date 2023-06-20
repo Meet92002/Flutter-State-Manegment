@@ -1,6 +1,5 @@
 import 'package:app_exceptions/res/components/round_button.dart';
 import 'package:app_exceptions/utils/utils.dart';
-import 'package:app_exceptions/view/home_screen.dart';
 import 'package:app_exceptions/view_model/auth_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -96,15 +95,16 @@ class _LoginViewState extends State<LoginView> {
                     Utils.flushBArErrorMessage('Please Enter Password', context);
                 }else if(_passwordController.text.length<6){
                   Utils.flushBArErrorMessage('Please Enyer 6 digits password', context);
+
                 }else{
-                  // Map data ={
-                  //   'email': _emailContoller.text.toString(),
-                  //   'password':_passwordController.text.toString()
-                  // };
                   Map data ={
-                    'email': "eve.holt@reqres.in",
-                    'password':"cityslicka",
+                    'email': _emailContoller.text.toString(),
+                    'password':_passwordController.text.toString()
                   };
+                  // Map data ={
+                  //   'email': "eve.holt@reqres.in",
+                  //   'password':"cityslicka",
+                  // };
                   authViewModel.loginApi(data, context);
                   print('Api Hit');
                 }

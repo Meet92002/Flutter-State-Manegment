@@ -40,11 +40,11 @@ class AuthViewModel with ChangeNotifier{
 
   }
 
-  Future<void> signUpApi(dynamic data,BuildContext context)async{
+  Future<void>  signUpApi(dynamic data,BuildContext context)async{
     setsigUpLnoading(true);
     _myRepo.loginApi(data).then((value){
       setsigUpLnoading(false);
-      Utils.flushBArErrorMessage('Login Successfully', context);
+      Utils.flushBArErrorMessage('Signup Successfully', context);
       Navigator.pushNamed(context, RoutesName.home);
       if(kDebugMode){
         print(value.toString());

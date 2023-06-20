@@ -1,6 +1,3 @@
-import 'dart:html';
-import 'dart:js';
-
 import 'package:app_exceptions/model/user_model.dart';
 import 'package:app_exceptions/utils/routes/routes_name.dart';
 import 'package:app_exceptions/view_model/user_view_model.dart';
